@@ -4,12 +4,17 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 //Components
+import { HeaderComponent } from "./components/header/header.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 //Material
-import { MatButtonModule, MatCheckboxModule } from "@angular/material";
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { HeaderComponent } from "./components/header/header.component";
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [SidebarComponent, HeaderComponent],
@@ -19,7 +24,8 @@ import { HeaderComponent } from "./components/header/header.component";
     MatButtonModule,
     MatCheckboxModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule
   ],
   exports: [
     MatButtonModule,
@@ -27,7 +33,9 @@ import { HeaderComponent } from "./components/header/header.component";
     MatSidenavModule,
     FormsModule,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class SharedModule {}

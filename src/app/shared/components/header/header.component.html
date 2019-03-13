@@ -1,5 +1,10 @@
-<p>
-  header works!<button mat-button (click)="toggleSidebar()">
-    ToggleSidebar
-  </button>
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSidebar()">
+      <i class="material-icons">
+        menu
+      </i>
+    </button>
+    <span>Custom Toolbar</span>
+  </mat-toolbar-row>
+</mat-toolbar>
