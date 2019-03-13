@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  private toggleSidebar() {
+  private toggleSidebar(): void {
     this.sidebarSingletonService.toggleSidebar();
   }
 }

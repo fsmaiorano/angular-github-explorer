@@ -1,0 +1,13 @@
+@import "../../../../assets/styles/abstracts/_variables";
+
+.header {
+  .menu {
+    &__icon {
+      transform: translateY(-2px);
+
+      &:hover {
+        color: $color-action-hover;
+      }
+    }
+  }
+}
