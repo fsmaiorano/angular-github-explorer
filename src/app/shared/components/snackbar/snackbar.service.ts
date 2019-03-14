@@ -9,7 +9,7 @@ import {
   providedIn: "root"
 })
 export class SnackbarService {
-  private duration: 8000;
+  private duration: 100;
   private horizontalPosition: MatSnackBarHorizontalPosition = "right";
   private verticalPosition: MatSnackBarVerticalPosition = "top";
 

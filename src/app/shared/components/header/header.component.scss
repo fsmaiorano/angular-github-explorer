@@ -5,6 +5,7 @@
 
   .menu {
     &__icon {
+      transition: 0.2s all;
       transform: translateY(-2px);
 
       &:hover {
@@ -16,5 +17,13 @@
   .title {
     margin-left: 1%;
     width: 80%;
+  }
+
+  .action {
+    transition: 0.2s all;
+
+    &:hover {
+      color: $color-action-hover;
+    }
   }
 }
