@@ -13,7 +13,8 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatIconModule
+  MatIconModule,
+  MatInputModule
 } from "@angular/material";
 
 @NgModule({
@@ -25,7 +26,8 @@ import {
     MatCheckboxModule,
     MatSidenavModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule
   ],
   exports: [
     MatButtonModule,
@@ -35,7 +37,8 @@ import {
     SidebarComponent,
     HeaderComponent,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
   ]
 })
 export class SharedModule {}

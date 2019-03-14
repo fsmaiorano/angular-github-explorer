@@ -7,9 +7,12 @@ import { SidebarSingletonService } from "../sidebar/sidebar-singleton.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
+  private showHeader: boolean;
   constructor(private sidebarSingletonService: SidebarSingletonService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showHeader = false;
+  }
 
   private toggleSidebar(): void {
     this.sidebarSingletonService.toggleSidebar();

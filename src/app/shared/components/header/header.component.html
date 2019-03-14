@@ -1,10 +1,12 @@
-<mat-toolbar color="primary" class="header">
-  <mat-toolbar-row>
-    <button class="menu" mat-icon-button (click)="toggleSidebar()">
-      <i class="material-icons menu__icon">
-        menu
-      </i>
-    </button>
-    <span>Github Explorer</span>
-  </mat-toolbar-row>
-</mat-toolbar>
+<header>
+  <mat-toolbar color="primary" class="header" *ngIf="showHeader">
+    <mat-toolbar-row>
+      <button class="menu" mat-icon-button (click)="toggleSidebar()">
+        <i class="material-icons menu__icon">
+          menu
+        </i>
+      </button>
+      <span>Github Explorer</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
