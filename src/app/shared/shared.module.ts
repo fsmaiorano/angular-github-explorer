@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 //Components
 import { HeaderComponent } from "./components/header/header.component";
+import { LoaderComponent } from "./components/loader/loader.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 //Providers
@@ -18,11 +19,12 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatIconModule,
-  MatInputModule
+  MatInputModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 
 @NgModule({
-  declarations: [SidebarComponent, HeaderComponent],
+  declarations: [SidebarComponent, HeaderComponent, LoaderComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -33,7 +35,8 @@ import {
     MatToolbarModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +49,9 @@ import {
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    LoaderComponent
   ],
   providers: [GithubService]
 })

@@ -13,11 +13,18 @@
 
   &__actions {
     width: 50%;
+    position: relative;
     display: block;
 
     button {
       width: 100%;
       height: 50px;
+    }
+
+    .mat-button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

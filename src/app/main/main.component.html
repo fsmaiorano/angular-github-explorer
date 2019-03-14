@@ -25,7 +25,8 @@
             color="primary"
             [disabled]="githubUsernameForm.invalid"
           >
-            Explore! {{ isLoading ? "aguarde..." : "" }}
+            <span *ngIf="!isLoading">Explore!</span>
+            <app-loader [size]="30" *ngIf="isLoading"></app-loader>
           </button>
         </div>
       </form>
