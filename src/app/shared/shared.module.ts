@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 //Components
@@ -27,7 +27,8 @@ import {
     MatSidenavModule,
     FormsModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
@@ -38,7 +39,8 @@ import {
     HeaderComponent,
     MatToolbarModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {}

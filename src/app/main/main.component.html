@@ -4,12 +4,27 @@
       Github Explorer
     </h1>
     <div class="container__content">
-      <form action="" class="form">
+      <form
+        class="form"
+        [formGroup]="githubUsernameForm"
+        (submit)="getUser()"
+        novalidate
+      >
         <mat-form-field>
-          <input matInput placeholder="Github Username" />
+          <input
+            matInput
+            placeholder="Github Username"
+            formControlName="username"
+          />
         </mat-form-field>
         <div class="form__actions">
-          <button class="action" mat-raised-button color="primary">
+          <button
+            class="action"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="githubUsernameForm.invalid"
+          >
             Explore!
           </button>
         </div>
