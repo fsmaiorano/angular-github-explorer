@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -6,6 +7,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //Components
 import { HeaderComponent } from "./components/header/header.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
+
+//Providers
+import { GithubService } from "./services/github/github.service";
 
 //Material
 import {
@@ -28,7 +32,8 @@ import {
     FormsModule,
     MatToolbarModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     MatButtonModule,
@@ -40,7 +45,9 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [GithubService]
 })
 export class SharedModule {}

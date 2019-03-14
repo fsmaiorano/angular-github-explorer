@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { GithubService } from "../shared/services/github/github.service";
 
 @Component({
   selector: "app-main",
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class MainComponent implements OnInit {
   private githubUsernameForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private githubService: GithubService) {
     this.initForm();
   }
 
@@ -23,6 +24,8 @@ export class MainComponent implements OnInit {
 
   public getUser() {
     const form = this.githubUsernameForm.value;
-    debugger;
+    this.githubService.getUser(form.username).subscribe(responder => {
+      debugger;
+    });
   }
 }
