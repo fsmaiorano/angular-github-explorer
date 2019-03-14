@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./loader.component.scss"]
 })
 export class LoaderComponent implements OnInit {
-  private color = "primary";
+  private color = "accent";
   private mode = "indeterminate";
   private value = 50;
   @Input() size: number;
