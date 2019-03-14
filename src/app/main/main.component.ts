@@ -7,6 +7,7 @@ import { SnackbarService } from "../shared/components/snackbar/snackbar.service"
 import { GithubService } from "../shared/services/github/github.service";
 import { GithubSingletonService } from "../shared/services/github/github-singleton.service";
 import { HttpErrorResponse } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-main",
@@ -21,7 +22,8 @@ export class MainComponent implements OnInit {
     private fb: FormBuilder,
     private githubService: GithubService,
     private githubSingletonService: GithubSingletonService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    private router: Router
   ) {
     this.isLoading = false;
     this.initForm();
@@ -42,6 +44,8 @@ export class MainComponent implements OnInit {
       (user: User) => {
         this.isLoading = false;
         this.githubSingletonService.setUSer(user);
+        debugger;
+        this.router.navigateByUrl("/profile");
       },
       (err: HttpErrorResponse) => {
         this.isLoading = false;

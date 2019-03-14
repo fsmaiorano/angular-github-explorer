@@ -7,9 +7,10 @@ import { MainComponent } from "./main/main.component";
 import { SharedModule } from "./shared/shared.module";
 import { GithubService } from "./shared/services/github/github.service";
 import { GithubSingletonService } from "./shared/services/github/github-singleton.service";
+import { ProfileComponent } from './app/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, ProfileComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   bootstrap: [AppComponent]
 })
