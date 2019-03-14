@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { GithubService } from "../shared/services/github/github.service";
+import { GithubSingletonService } from "../shared/services/github/github-singleton.service";
+import { User } from "../shared/models/github";
 
 @Component({
   selector: "app-main",
@@ -9,8 +11,14 @@ import { GithubService } from "../shared/services/github/github.service";
 })
 export class MainComponent implements OnInit {
   private githubUsernameForm: FormGroup;
+  private isLoading: boolean;
 
-  constructor(private fb: FormBuilder, private githubService: GithubService) {
+  constructor(
+    private fb: FormBuilder,
+    private githubService: GithubService,
+    private githubSingletonService: GithubSingletonService
+  ) {
+    this.isLoading = false;
     this.initForm();
   }
 
@@ -23,9 +31,18 @@ export class MainComponent implements OnInit {
   }
 
   public getUser() {
+    this.isLoading = true;
     const form = this.githubUsernameForm.value;
-    this.githubService.getUser(form.username).subscribe(responder => {
-      debugger;
-    });
+    this.githubService.getUser(form.username).subscribe(
+      (user: User) => {
+        this.isLoading = false;
+        this.githubSingletonService.setUSer(user);
+      },
+      (err: Error) => {
+        debugger;
+        this.isLoading = false;
+        console.log(err.message);
+      }
+    );
   }
 }

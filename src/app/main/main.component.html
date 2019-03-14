@@ -25,7 +25,7 @@
             color="primary"
             [disabled]="githubUsernameForm.invalid"
           >
-            Explore!
+            Explore! {{ isLoading ? "aguarde..." : "" }}
           </button>
         </div>
       </form>
