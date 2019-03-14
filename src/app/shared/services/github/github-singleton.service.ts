@@ -15,7 +15,8 @@ export class GithubSingletonService {
 
   getUser() {
     if (!this.user) {
-      this.user = JSON.parse(localStorage.getItem("GithubExplorer:user"));
+      const user = JSON.parse(localStorage.getItem("GithubExplorer:user"));
+      this.setUSer(user);
     }
     return this.user;
   }

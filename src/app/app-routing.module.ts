@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { MainComponent } from "./main/main.component";
 import { ProfileComponent } from "./app/profile/profile.component";
+import { GuardService } from "./shared/guards/guard.service";
 
 const routes: Routes = [
   {
@@ -11,7 +12,9 @@ const routes: Routes = [
   },
   {
     path: "profile",
-    component: ProfileComponent
+    component: ProfileComponent,
+    canLoad: [GuardService],
+    canActivate: [GuardService]
   }
 ];
 

@@ -1,5 +1,4 @@
 import { Injectable, Output, EventEmitter } from "@angular/core";
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
