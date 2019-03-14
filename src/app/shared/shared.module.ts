@@ -9,9 +9,6 @@ import { HeaderComponent } from "./components/header/header.component";
 import { LoaderComponent } from "./components/loader/loader.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
-//Providers
-import { GithubService } from "./services/github/github.service";
-
 //Material
 import {
   MatButtonModule,
@@ -20,7 +17,8 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatInputModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSnackBarModule
 } from "@angular/material";
 
 @NgModule({
@@ -36,7 +34,8 @@ import {
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -51,8 +50,8 @@ import {
     ReactiveFormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    LoaderComponent
-  ],
-  providers: [GithubService]
+    LoaderComponent,
+    MatSnackBarModule
+  ]
 })
 export class SharedModule {}

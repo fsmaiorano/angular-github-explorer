@@ -1,8 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { User } from "../shared/models/github";
+
+//Services
+import { SnackbarService } from "../shared/components/snackbar/snackbar.service";
 import { GithubService } from "../shared/services/github/github.service";
 import { GithubSingletonService } from "../shared/services/github/github-singleton.service";
-import { User } from "../shared/models/github";
+import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: "app-main",
@@ -16,7 +20,8 @@ export class MainComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private githubService: GithubService,
-    private githubSingletonService: GithubSingletonService
+    private githubSingletonService: GithubSingletonService,
+    private snackbarService: SnackbarService
   ) {
     this.isLoading = false;
     this.initForm();
@@ -38,10 +43,13 @@ export class MainComponent implements OnInit {
         this.isLoading = false;
         this.githubSingletonService.setUSer(user);
       },
-      (err: Error) => {
-        debugger;
+      (err: HttpErrorResponse) => {
         this.isLoading = false;
-        console.log(err.message);
+        if (err.status === 404) {
+          return this.snackbarService.open("User not found! 😥");
+        } else {
+          return this.snackbarService.open(err.message);
+        }
       }
     );
   }
