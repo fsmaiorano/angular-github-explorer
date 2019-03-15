@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./repositories.component.scss']
 })
 export class RepositoriesComponent implements OnInit {
+  private repositoryType: string;
   private repositories: Repository[];
 
   constructor(
@@ -19,13 +20,15 @@ export class RepositoriesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.repositories = [];
     this.activatedRoute.data.subscribe(data => {
       this.handleRepositories(data.type);
     });
   }
 
-  handleRepositories(type: string) {
-    switch (type) {
+  handleRepositories(repositoryType: string) {
+    this.repositoryType = repositoryType;
+    switch (repositoryType) {
       case 'repositories':
         return this.getRepositories();
       case 'starred':
@@ -40,6 +43,7 @@ export class RepositoriesComponent implements OnInit {
     const user = this.githubServiceSingleton.getUser();
     this.githubService.getUserRepositories(user.login).subscribe(
       userRepositories => {
+        console.log(userRepositories);
         this.repositories = userRepositories;
       },
       error => {
@@ -52,6 +56,7 @@ export class RepositoriesComponent implements OnInit {
     const user = this.githubServiceSingleton.getUser();
     this.githubService.getUserStarredRepositories(user.login).subscribe(
       userRepositories => {
+        console.log(userRepositories);
         this.repositories = userRepositories;
       },
       error => {

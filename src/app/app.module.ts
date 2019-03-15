@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
+import { RepositoriesItemComponent } from './repositories/repositories-item/repositories-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RepositoriesListComponent } from './repositories/repositories-list/repo
     ProfileComponent,
     RepositoriesComponent,
     ProfileDetailsComponent,
-    RepositoriesListComponent
+    RepositoriesListComponent,
+    RepositoriesItemComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   bootstrap: [AppComponent]

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 //Components
 import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -19,7 +21,9 @@ import {
   MatInputModule,
   MatProgressSpinnerModule,
   MatSnackBarModule,
-  MatListModule
+  MatListModule,
+  MatCardModule,
+  MatTooltipModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
@@ -39,7 +43,10 @@ import { RouterModule } from '@angular/router';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     RouterModule,
-    MatListModule
+    MatListModule,
+    ScrollingModule,
+    MatCardModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -57,7 +64,10 @@ import { RouterModule } from '@angular/router';
     LoaderComponent,
     MatSnackBarModule,
     RouterModule,
-    MatListModule
+    MatListModule,
+    ScrollingModule,
+    MatCardModule,
+    MatTooltipModule
   ]
 })
 export class SharedModule {}

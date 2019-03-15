@@ -1,2 +1,8 @@
 <p>lista de repositórios</p>
-<app-repositories-list [repositories]="repositories"></app-repositories-list>
+<app-repositories-list
+  class="repositories-list"
+  *ngIf="repositories.length > 0"
+  [repositories]="repositories"
+  [type]="repositoryType"
+></app-repositories-list>
+<app-loader [size]="50" *ngIf="repositories.length === 0"></app-loader>

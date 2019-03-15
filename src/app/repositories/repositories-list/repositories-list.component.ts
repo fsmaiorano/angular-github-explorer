@@ -7,6 +7,7 @@ import { Repository } from '../../shared/models/github';
   styleUrls: ['./repositories-list.component.scss']
 })
 export class RepositoriesListComponent implements OnInit {
+  @Input() type: string;
   @Input() repositories: Repository[];
 
   constructor() {}
