@@ -39,4 +39,18 @@ export class GithubService {
       })
     );
   }
+
+  getUserStarredRepositories(username: string): Observable<Repository[]> {
+    return this.http
+      .get(`${environment.apiUrl}/users/${username}/starred`)
+      .pipe(
+        take(1),
+        map((githubUserStarredRepositories: Repository[]) => {
+          if (!githubUserStarredRepositories) {
+            throw new Error();
+          }
+          return githubUserStarredRepositories;
+        })
+      );
+  }
 }

@@ -25,7 +25,7 @@ const routes: Routes = [
         data: { type: 'repositories' }
       },
       {
-        path: 'starred',
+        path: 'repositories/starred',
         component: RepositoriesComponent,
         canLoad: [GuardService],
         canActivate: [GuardService],
