@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubService } from '../../shared/services/github/github.service';
-import { GithubSingletonService } from '../../shared/services/github/github-singleton.service';
-import { Repository } from '../../shared/models/github';
+import { Repository } from '../shared/models/github';
+import { GithubService } from '../shared/services/github/github.service';
+import { GithubSingletonService } from '../shared/services/github/github-singleton.service';
 
 @Component({
   selector: 'app-repositories',

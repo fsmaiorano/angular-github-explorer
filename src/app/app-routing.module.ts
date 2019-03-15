@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GuardService } from './shared/guards/guard.service';
-import { RepositoriesComponent } from './profile/repositories/repositories.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 const routes: Routes = [
   {

@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
-import { RepositoriesComponent } from './profile/repositories/repositories.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
