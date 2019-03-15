@@ -1,5 +1,9 @@
-<header>
-  <mat-toolbar color="primary" class="header" *ngIf="showHeader">
+<header class="header">
+  <mat-toolbar
+    color="primary"
+    class="header mat-elevation-z6"
+    *ngIf="showHeader"
+  >
     <mat-toolbar-row>
       <button class="menu" mat-icon-button (click)="toggleSidebar()">
         <i class="material-icons menu__icon">

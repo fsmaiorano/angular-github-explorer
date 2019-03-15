@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { User } from "../shared/models/github";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { User } from '../shared/models/github';
 
 //Services
-import { SnackbarService } from "../shared/components/snackbar/snackbar.service";
-import { GithubService } from "../shared/services/github/github.service";
-import { GithubSingletonService } from "../shared/services/github/github-singleton.service";
-import { HttpErrorResponse } from "@angular/common/http";
-import { Router } from "@angular/router";
-import { HeaderSingletonService } from "../shared/components/header/header-singleton.service";
+import { SnackbarService } from '../shared/components/snackbar/snackbar.service';
+import { GithubService } from '../shared/services/github/github.service';
+import { GithubSingletonService } from '../shared/services/github/github-singleton.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { HeaderSingletonService } from '../shared/components/header/header-singleton.service';
 
 @Component({
-  selector: "app-main",
-  templateUrl: "./main.component.html",
-  styleUrls: ["./main.component.scss"]
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
   private githubUsernameForm: FormGroup;
@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
 
   private initForm() {
     this.githubUsernameForm = this.fb.group({
-      username: this.fb.control("", [Validators.required])
+      username: this.fb.control('', [Validators.required])
     });
   }
 
@@ -47,12 +47,12 @@ export class MainComponent implements OnInit {
         this.isLoading = false;
         this.githubSingletonService.setUSer(user);
         this.headerSingletonService.show();
-        this.router.navigateByUrl("/profile");
+        this.router.navigateByUrl('/profile/repositories');
       },
       (err: HttpErrorResponse) => {
         this.isLoading = false;
         if (err.status === 404) {
-          return this.snackbarService.open("User not found! 😥");
+          return this.snackbarService.open('User not found! 😥');
         } else {
           return this.snackbarService.open(err.message);
         }

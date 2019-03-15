@@ -1,2 +1,30 @@
 .profile {
+  margin-top: 5.4rem;
+
+  &__info-bar {
+    padding: 0;
+
+    .title {
+      margin-left: 5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem;
+    border: 1px solid red;
+
+    .container-left {
+      width: 20%;
+      border: 1px solid greenyellow;
+    }
+    .container-right {
+      width: 80%;
+      border: 1px solid goldenrod;
+    }
+  }
 }

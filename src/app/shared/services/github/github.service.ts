@@ -1,28 +1,41 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
-import { Observable } from "rxjs";
-import { map, catchError } from "rxjs/operators";
+import { Observable } from 'rxjs';
+import { map, catchError, take } from 'rxjs/operators';
 
 // Models
-import { User } from "../../models/github";
+import { User, Repositories } from '../../models/github';
 
 // Environment
-import { environment } from "../../../../environments/environment";
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class GithubService {
   constructor(private http: HttpClient) {}
 
   getUser(username: string): Observable<User> {
     return this.http.get(`${environment.apiUrl}/users/${username}`).pipe(
+      take(1),
       map((githubUser: User) => {
         if (!githubUser) {
           throw new Error();
         }
         return githubUser;
+      })
+    );
+  }
+
+  getUserRepositories(username: string): Observable<Repositories> {
+    return this.http.get(`${environment.apiUrl}/users/${username}/repos`).pipe(
+      take(1),
+      map((githubUserRepositories: Repositories) => {
+        if (!githubUserRepositories) {
+          throw new Error();
+        }
+        return githubUserRepositories;
       })
     );
   }

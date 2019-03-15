@@ -1,8 +1,15 @@
 <section class="profile">
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="profile__info-bar">
     <mat-toolbar-row>
-      <span>Custom Toolbar</span>
+      <span class="title">Github Profile: {{ user.name }}</span>
     </mat-toolbar-row>
   </mat-toolbar>
-  {{ user.name }}
+
+  <div class="profile__container">
+    <!-- <img class="avatar" [src]="user.avatar_url" alt="User Avatar" /> -->
+    <div class="container-left">
+      <app-profile-details [user]="user"></app-profile-details>
+    </div>
+    <div class="container-right"><router-outlet></router-outlet></div>
+  </div>
 </section>
