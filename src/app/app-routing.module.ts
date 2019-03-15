@@ -21,7 +21,15 @@ const routes: Routes = [
         path: 'repositories',
         component: RepositoriesComponent,
         canLoad: [GuardService],
-        canActivate: [GuardService]
+        canActivate: [GuardService],
+        data: { type: 'repositories' }
+      },
+      {
+        path: 'starred',
+        component: RepositoriesComponent,
+        canLoad: [GuardService],
+        canActivate: [GuardService],
+        data: { type: 'starred' }
       }
     ]
   },

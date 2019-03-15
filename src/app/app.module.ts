@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RepositoriesComponent } from './repositories/repositories.component';
     MainComponent,
     ProfileComponent,
     RepositoriesComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    RepositoriesListComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   bootstrap: [AppComponent]
