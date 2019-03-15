@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../../shared/services/github/github.service';
 import { GithubSingletonService } from '../../shared/services/github/github-singleton.service';
-import { Repositories } from '../../shared/models/github';
+import { Repository } from '../../shared/models/github';
 
 @Component({
   selector: 'app-repositories',
@@ -9,7 +9,7 @@ import { Repositories } from '../../shared/models/github';
   styleUrls: ['./repositories.component.scss']
 })
 export class RepositoriesComponent implements OnInit {
-  private repositories: Repositories;
+  private repositories: Repository[];
   constructor(
     private githubService: GithubService,
     private githubServiceSingleton: GithubSingletonService
@@ -17,6 +17,13 @@ export class RepositoriesComponent implements OnInit {
 
   ngOnInit() {
     const user = this.githubServiceSingleton.getUser();
-    this.githubService.getUserRepositories(user.login);
+    this.githubService.getUserRepositories(user.login).subscribe(
+      userRepositories => {
+        this.repositories = userRepositories;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

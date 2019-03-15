@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, catchError, take } from 'rxjs/operators';
 
 // Models
-import { User, Repositories } from '../../models/github';
+import { User, Repository } from '../../models/github';
 
 // Environment
 import { environment } from '../../../../environments/environment';
@@ -28,10 +28,10 @@ export class GithubService {
     );
   }
 
-  getUserRepositories(username: string): Observable<Repositories> {
+  getUserRepositories(username: string): Observable<Repository[]> {
     return this.http.get(`${environment.apiUrl}/users/${username}/repos`).pipe(
       take(1),
-      map((githubUserRepositories: Repositories) => {
+      map((githubUserRepositories: Repository[]) => {
         if (!githubUserRepositories) {
           throw new Error();
         }

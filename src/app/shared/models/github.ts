@@ -32,7 +32,7 @@ export interface User {
   updated_at: string;
 }
 
-export interface Repositories {
+export interface Repository {
   id: number;
   node_id: string;
   name: string;
