@@ -7,9 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 //Components
-import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 //Material
 import {
@@ -30,13 +28,7 @@ import { WindowScrollDirective } from './directives/window-scroll.directive';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [
-    SidebarComponent,
-    HeaderComponent,
-    LoaderComponent,
-    WindowScrollDirective,
-    SidenavComponent
-  ],
+  declarations: [LoaderComponent, WindowScrollDirective, SidenavComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -61,8 +53,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatCheckboxModule,
     MatSidenavModule,
     FormsModule,
-    SidebarComponent,
-    HeaderComponent,
     MatToolbarModule,
     MatIconModule,
     MatInputModule,

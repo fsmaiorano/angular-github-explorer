@@ -8,7 +8,6 @@ import { GithubService } from '../shared/services/github/github.service';
 import { GithubSingletonService } from '../shared/services/github/github-singleton.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { HeaderSingletonService } from '../shared/components/header/header-singleton.service';
 
 @Component({
   selector: 'app-main',
@@ -24,7 +23,6 @@ export class MainComponent implements OnInit {
     private githubService: GithubService,
     private githubSingletonService: GithubSingletonService,
     private snackbarService: SnackbarService,
-    private headerSingletonService: HeaderSingletonService,
     private router: Router
   ) {
     this.isLoading = false;
@@ -46,7 +44,6 @@ export class MainComponent implements OnInit {
       (user: User) => {
         this.isLoading = false;
         this.githubSingletonService.setUSer(user);
-        this.headerSingletonService.show();
         this.router.navigateByUrl('/profile/repositories');
       },
       (err: HttpErrorResponse) => {
