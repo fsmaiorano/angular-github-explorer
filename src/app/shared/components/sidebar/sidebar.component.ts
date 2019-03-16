@@ -12,21 +12,15 @@ import { SidebarSingletonService } from './sidebar-singleton.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit, AfterContentInit {
-  @ContentChild(NgModel) model: NgModel;
+export class SidebarComponent implements OnInit {
   private opened: boolean;
 
   constructor(private sidebarSingletonService: SidebarSingletonService) {
-    this.handleSidebar();
-  }
-
-  ngOnInit() {}
-
-  handleSidebar() {
-    this.sidebarSingletonService.sidebarOpen.subscribe(isOpend => {
+    this.sidebarSingletonService.emitSidebarOpen.subscribe(isOpend => {
+      debugger;
       this.opened = isOpend;
     });
   }
 
-  ngAfterContentInit() {}
+  ngOnInit() {}
 }

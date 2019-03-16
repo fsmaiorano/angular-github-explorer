@@ -3,6 +3,7 @@ import { Repository } from '../shared/models/github';
 import { GithubService } from '../shared/services/github/github.service';
 import { GithubSingletonService } from '../shared/services/github/github-singleton.service';
 import { ActivatedRoute } from '@angular/router';
+import { Pagination } from '../shared/utils/pagination';
 
 @Component({
   selector: 'app-repositories',
@@ -11,13 +12,32 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RepositoriesComponent implements OnInit {
   private repositoryType: string;
+  private viewRepositories: Repository[];
   private repositories: Repository[];
+
+  private currentPage: number;
+  private limitItems: number;
 
   constructor(
     private githubService: GithubService,
     private githubServiceSingleton: GithubSingletonService,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.currentPage = 1;
+    this.limitItems = 12;
+    window.onscroll = () => {
+      // console.log(window.innerHeight + document.documentElement.scrollTop);
+      // console.log(document.documentElement.offsetHeight);
+      if (
+        window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight
+      ) {
+        this.currentPage++;
+        return this.doRepositoriesPagination();
+      }
+      return console.log('nfim');
+    };
+  }
 
   ngOnInit() {
     this.repositories = [];
@@ -43,8 +63,13 @@ export class RepositoriesComponent implements OnInit {
     const user = this.githubServiceSingleton.getUser();
     this.githubService.getUserRepositories(user.login).subscribe(
       userRepositories => {
-        console.log(userRepositories);
+        this.currentPage = 1;
         this.repositories = userRepositories;
+        this.viewRepositories = Pagination(
+          userRepositories,
+          this.currentPage,
+          this.limitItems
+        );
       },
       error => {
         console.log(error);
@@ -56,12 +81,26 @@ export class RepositoriesComponent implements OnInit {
     const user = this.githubServiceSingleton.getUser();
     this.githubService.getUserStarredRepositories(user.login).subscribe(
       userRepositories => {
-        console.log(userRepositories);
+        this.currentPage = 1;
         this.repositories = userRepositories;
+        this.viewRepositories = Pagination(
+          userRepositories,
+          this.currentPage,
+          this.limitItems
+        );
       },
       error => {
         console.log(error);
       }
     );
+  }
+
+  doRepositoriesPagination() {
+    const moreContent = Pagination(
+      this.repositories,
+      this.currentPage,
+      this.limitItems
+    );
+    this.viewRepositories = [...this.viewRepositories, ...moreContent];
   }
 }

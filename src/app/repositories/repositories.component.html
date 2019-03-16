@@ -1,8 +1,8 @@
 <p>lista de repositórios</p>
 <app-repositories-list
   class="repositories-list"
-  *ngIf="repositories.length > 0"
-  [repositories]="repositories"
+  *ngIf="viewRepositories.length > 0"
+  [repositories]="viewRepositories"
   [type]="repositoryType"
 ></app-repositories-list>
-<app-loader [size]="50" *ngIf="repositories.length === 0"></app-loader>
+<app-loader [size]="50" *ngIf="viewRepositories.length === 0"></app-loader>
