@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav">
+<!-- <mat-sidenav-container class="sidenav">
   <mat-sidenav class="sidenav__menu" mode="over" [(opened)]="opened">
     <mat-nav-list>
       <mat-list-item
@@ -19,6 +19,8 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <ng-content></ng-content>
+    <router-outlet windowScroll>
+      <app-header></app-header>
+    </router-outlet>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->

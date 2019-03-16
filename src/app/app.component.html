@@ -1,5 +1,32 @@
-<app-sidebar>
+<!-- <app-sidebar>
   <router-outlet>
     <app-header></app-header>
   </router-outlet>
-</app-sidebar>
+</app-sidebar> -->
+
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav class="sidenav__menu" mode="over" [(opened)]="opened">
+    <mat-nav-list>
+      <mat-list-item
+        routerLinkActive="active"
+        [routerLinkActive]="['is-active']"
+      >
+        <a [routerLink]="['/profile/repositories']">Repositories</a>
+      </mat-list-item>
+      <mat-list-item
+        routerLinkActive="active"
+        [routerLinkActive]="['is-active']"
+      >
+        <a [routerLink]="['/profile/repositories/starred']"
+          >Starred Repositories</a
+        >
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet windowScroll>
+      <app-header></app-header>
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
