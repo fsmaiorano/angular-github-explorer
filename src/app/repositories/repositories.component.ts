@@ -32,6 +32,7 @@ export class RepositoriesComponent implements OnInit {
         window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight
       ) {
+        console.log('fim');
         this.currentPage++;
         return this.doRepositoriesPagination();
       }

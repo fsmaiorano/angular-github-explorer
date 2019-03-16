@@ -10,6 +10,14 @@ import { ProfileDetailsComponent } from './profile/profile-details/profile-detai
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { RepositoriesListComponent } from './repositories/repositories-list/repositories-list.component';
 import { RepositoriesItemComponent } from './repositories/repositories-item/repositories-item.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,17 @@ import { RepositoriesItemComponent } from './repositories/repositories-item/repo
     RepositoriesListComponent,
     RepositoriesItemComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

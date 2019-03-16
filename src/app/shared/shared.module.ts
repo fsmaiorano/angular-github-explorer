@@ -27,13 +27,15 @@ import {
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { WindowScrollDirective } from './directives/window-scroll.directive';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     HeaderComponent,
     LoaderComponent,
-    WindowScrollDirective
+    WindowScrollDirective,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +76,8 @@ import { WindowScrollDirective } from './directives/window-scroll.directive';
     ScrollingModule,
     MatCardModule,
     MatTooltipModule,
-    WindowScrollDirective
+    WindowScrollDirective,
+    SidenavComponent
   ]
 })
 export class SharedModule {}

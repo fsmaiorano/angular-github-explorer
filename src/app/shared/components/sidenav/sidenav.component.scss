@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/abstracts/_variables';
+
+.sidenav-container {
+  height: 100%;
+
+  .hidden {
+    display: none;
+  }
+
+  .sidenav {
+    width: 200px;
+
+    &__title {
+      color: green;
+    }
+
+    &__menu {
+      .is-active {
+        background-color: red;
+      }
+    }
+  }
+
+  .mat-sidenav-content {
+    .mat-toolbar {
+      top: 0;
+      position: fixed;
+      width: 100%;
+      z-index: 99;
+      border-bottom: 1px solid black;
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+        0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+      .menu {
+        &__icon {
+          transition: 0.2s all;
+          transform: translateY(-2px);
+
+          &:hover {
+            color: $color-action-hover;
+          }
+        }
+      }
+    }
+  }
+}

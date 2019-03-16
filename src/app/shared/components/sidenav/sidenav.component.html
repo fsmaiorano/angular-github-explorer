@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async)!.matches"
+  >
+    <mat-toolbar class="sidenav__title">Menu</mat-toolbar>
+    <mat-nav-list class="sidenav__menu">
+      <mat-list-item
+        routerLinkActive="active"
+        [routerLinkActive]="['is-active']"
+      >
+        <a [routerLink]="['/profile/repositories']">Repositories</a>
+      </mat-list-item>
+      <mat-list-item
+        routerLinkActive="active"
+        [routerLinkActive]="['is-active']"
+      >
+        <a [routerLink]="['/profile/repositories/starred']"
+          >Starred Repositories</a
+        >
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" mat-elevation-z6>
+      <button
+        class="menu"
+        mat-icon-button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <i class="material-icons menu__icon">
+          menu
+        </i>
+      </button>
+
+      <span>Github Explorer</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
