@@ -40,7 +40,15 @@
         </i>
       </button>
 
-      <span>Github Explorer</span>
+      <span class="title">Github Explorer</span>
+      <button
+        class="action"
+        mat-flat-button
+        color="primary"
+        (click)="changeUser()"
+      >
+        <i class="material-icons"> directions_run </i>&nbsp;Change User
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

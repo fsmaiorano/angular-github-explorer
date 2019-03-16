@@ -3,10 +3,6 @@
 .sidenav-container {
   height: 100%;
 
-  .hidden {
-    display: none;
-  }
-
   .sidenav {
     width: 200px;
 
@@ -38,6 +34,18 @@
           &:hover {
             color: $color-action-hover;
           }
+        }
+      }
+      .title {
+        margin-left: 1%;
+        width: 80%;
+      }
+
+      .action {
+        transition: 0.2s all;
+
+        &:hover {
+          color: $color-action-hover;
         }
       }
     }
