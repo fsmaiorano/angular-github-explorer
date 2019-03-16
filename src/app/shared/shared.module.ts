@@ -26,9 +26,15 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { WindowScrollDirective } from './directives/window-scroll.directive';
 
 @NgModule({
-  declarations: [SidebarComponent, HeaderComponent, LoaderComponent],
+  declarations: [
+    SidebarComponent,
+    HeaderComponent,
+    LoaderComponent,
+    WindowScrollDirective
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -67,7 +73,8 @@ import { RouterModule } from '@angular/router';
     MatListModule,
     ScrollingModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    WindowScrollDirective
   ]
 })
 export class SharedModule {}

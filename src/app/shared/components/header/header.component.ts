@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { SidebarSingletonService } from "../sidebar/sidebar-singleton.service";
-import { HeaderSingletonService } from "./header-singleton.service";
-import { GithubSingletonService } from "../../services/github/github-singleton.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { SidebarSingletonService } from '../sidebar/sidebar-singleton.service';
+import { HeaderSingletonService } from './header-singleton.service';
+import { GithubSingletonService } from '../../services/github/github-singleton.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   private showHeader: boolean;
@@ -25,12 +25,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   private toggleSidebar(): void {
+    console.log('toggle sidebar');
     this.sidebarSingletonService.toggleSidebar();
   }
 
   private changeUser(): void {
     this.headerSingletonService.hide();
     this.githubSingletonService.clearUser();
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl('');
   }
 }
