@@ -15,23 +15,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  private githubUsernameForm: FormGroup;
+  public githubUsernameForm: FormGroup;
   private isLoading: boolean;
 
   constructor(
-    private fb: FormBuilder,
+    public fb: FormBuilder,
     private githubService: GithubService,
     private githubSingletonService: GithubSingletonService,
     private snackbarService: SnackbarService,
     private router: Router
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.isLoading = false;
     this.initForm();
   }
 
-  ngOnInit() {}
-
-  private initForm() {
+  public initForm() {
     this.githubUsernameForm = this.fb.group({
       username: this.fb.control('', [Validators.required])
     });
