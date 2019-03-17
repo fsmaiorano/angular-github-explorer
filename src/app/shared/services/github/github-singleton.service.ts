@@ -7,16 +7,12 @@ import { Observable, Subject } from 'rxjs';
 })
 export class GithubSingletonService {
   private user: User;
-  public userObservable = new Subject<User>();
-  constructor() {
-    this.userObservable.subscribe(value => {
-      debugger;
-    });
-  }
+  public user$ = new Subject<User>();
+  constructor() {}
 
   setUSer(user: User): void {
     this.user = user;
-    this.userObservable.next(user);
+    this.user$.next(user);
     localStorage.setItem('GithubExplorer:user', JSON.stringify(user));
   }
 
@@ -24,14 +20,14 @@ export class GithubSingletonService {
     if (!this.user) {
       const user = JSON.parse(localStorage.getItem('GithubExplorer:user'));
       this.setUSer(user);
-      this.userObservable.next(user);
+      this.user$.next(user);
     }
     return this.user;
   }
 
   clearUser(): void {
     this.user = null;
-    this.userObservable.next(null);
+    this.user$.next(null);
     localStorage.removeItem('GithubExplorer:user');
   }
 }
