@@ -2,12 +2,16 @@
   <mat-card class="repository">
     <div mat-card-header class="repository__header">
       <!-- <div mat-card-avatar class="repository__header-image"></div> -->
-      <mat-card-title class="title" matTooltip="{{ repository.name }}">{{
-        repository.name.length > 26
-          ? repository.name.slice(0, 23) + '...'
-          : repository.name
-      }}</mat-card-title>
-      <mat-card-subtitle *ngIf="type === 'starred'"
+      <mat-card-title
+        class="title skeleton"
+        matTooltip="{{ repository.name }}"
+        >{{
+          repository.name.length > 26
+            ? repository.name.slice(0, 23) + '...'
+            : repository.name
+        }}</mat-card-title
+      >
+      <mat-card-subtitle class="skeleton" *ngIf="type === 'starred'"
         >author:&nbsp;{{ repository.owner.login }}</mat-card-subtitle
       >
     </div>

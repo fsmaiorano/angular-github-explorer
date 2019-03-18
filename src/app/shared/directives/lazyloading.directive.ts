@@ -24,14 +24,17 @@ export class LazyloadingDirective implements AfterViewInit {
   }
 
   private lazyLoadImage() {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(({ isIntersecting }) => {
-        if (isIntersecting) {
-          this.loadImage();
-          obs.unobserve(this.el.nativeElement);
-        }
-      });
-    });
+    const obs = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          entry.target.classList.add('skeleton');
+          if (entry.isIntersecting) {
+            this.loadImage();
+            obs.unobserve(this.el.nativeElement);
+          }
+        });
+      }
+    );
     obs.observe(this.el.nativeElement);
   }
 

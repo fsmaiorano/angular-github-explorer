@@ -18,11 +18,19 @@ export class RepositoriesComponent implements OnInit {
   private currentPage: number;
   private limitItems: number;
 
+  public title: string;
+
   constructor(
     private githubService: GithubService,
     private githubServiceSingleton: GithubSingletonService,
     private activatedRoute: ActivatedRoute
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.init();
+  }
+
+  init() {
     this.currentPage = 1;
     this.limitItems = 12;
     window.onscroll = () => {
@@ -38,9 +46,6 @@ export class RepositoriesComponent implements OnInit {
       }
       return console.log('nfim');
     };
-  }
-
-  ngOnInit() {
     this.repositories = [];
     this.activatedRoute.data.subscribe(data => {
       this.handleRepositories(data.type);
@@ -51,8 +56,10 @@ export class RepositoriesComponent implements OnInit {
     this.repositoryType = repositoryType;
     switch (repositoryType) {
       case 'repositories':
+        this.title = 'Repositories';
         return this.getRepositories();
       case 'starred':
+        this.title = 'Starred Repositories';
         return this.getStarredRepositories();
 
       default:
