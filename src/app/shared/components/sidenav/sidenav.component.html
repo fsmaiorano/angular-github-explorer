@@ -7,8 +7,8 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async)!.matches"
   >
-    <mat-toolbar class="sidenav__title">Menu</mat-toolbar>
-    <mat-nav-list class="sidenav__menu">
+    <mat-toolbar class="sidenav__title" mat-elevation-z6>Menu</mat-toolbar>
+    <mat-nav-list class="sidenav__menu" mat-elevation-z6>
       <mat-list-item
         routerLinkActive="active"
         [routerLinkActive]="['is-active']"
@@ -26,7 +26,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" mat-elevation-z6 *ngIf="hasUser">
+    <mat-toolbar color="primary" *ngIf="hasUser">
       <button
         class="menu"
         mat-icon-button
