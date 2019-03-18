@@ -10,6 +10,7 @@
     <mat-toolbar class="sidenav__title" mat-elevation-z6>Menu</mat-toolbar>
     <mat-nav-list class="sidenav__menu" mat-elevation-z6>
       <mat-list-item
+        class="item"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         [routerLinkActive]="['is-active']"
@@ -17,6 +18,7 @@
         <a [routerLink]="['/profile/repositories']">Repositories</a>
       </mat-list-item>
       <mat-list-item
+        class="item"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         [routerLinkActive]="['is-active']"
