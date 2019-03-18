@@ -26,9 +26,15 @@ import {
 import { RouterModule } from '@angular/router';
 import { WindowScrollDirective } from './directives/window-scroll.directive';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { LazyloadingDirective } from './directives/lazyloading.directive';
 
 @NgModule({
-  declarations: [LoaderComponent, WindowScrollDirective, SidenavComponent],
+  declarations: [
+    LoaderComponent,
+    WindowScrollDirective,
+    SidenavComponent,
+    LazyloadingDirective
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -67,7 +73,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatCardModule,
     MatTooltipModule,
     WindowScrollDirective,
-    SidenavComponent
+    SidenavComponent,
+    LazyloadingDirective
   ]
 })
 export class SharedModule {}
