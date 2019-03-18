@@ -11,12 +11,14 @@
     <mat-nav-list class="sidenav__menu" mat-elevation-z6>
       <mat-list-item
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
         [routerLinkActive]="['is-active']"
       >
         <a [routerLink]="['/profile/repositories']">Repositories</a>
       </mat-list-item>
       <mat-list-item
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
         [routerLinkActive]="['is-active']"
       >
         <a [routerLink]="['/profile/repositories/starred']"
