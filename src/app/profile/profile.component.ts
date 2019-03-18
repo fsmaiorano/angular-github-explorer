@@ -8,7 +8,7 @@ import { GithubSingletonService } from '../shared/services/github/github-singlet
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  private user: User;
+  public user: User;
   constructor(private githubSingletonService: GithubSingletonService) {}
 
   ngOnInit() {

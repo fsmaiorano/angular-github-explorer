@@ -12,8 +12,8 @@ import { Pagination } from '../shared/utils/pagination';
 })
 export class RepositoriesComponent implements OnInit {
   private repositoryType: string;
-  private viewRepositories: Repository[];
   private repositories: Repository[];
+  public viewRepositories: Repository[];
 
   private currentPage: number;
   private limitItems: number;

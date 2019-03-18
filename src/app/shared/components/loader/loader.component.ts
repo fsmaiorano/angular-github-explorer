@@ -1,14 +1,14 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: "app-loader",
-  templateUrl: "./loader.component.html",
-  styleUrls: ["./loader.component.scss"]
+  selector: 'app-loader',
+  templateUrl: './loader.component.html',
+  styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
-  private color = "accent";
-  private mode = "indeterminate";
-  private value = 50;
+  public color = 'accent';
+  public mode = 'indeterminate';
+  public value = 50;
   @Input() size: number;
   constructor() {}
 

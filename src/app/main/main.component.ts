@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
   public githubUsernameForm: FormGroup;
-  private isLoading: boolean;
+  public isLoading: boolean;
 
   constructor(
     public fb: FormBuilder,
