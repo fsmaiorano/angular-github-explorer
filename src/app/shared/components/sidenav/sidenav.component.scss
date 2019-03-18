@@ -2,16 +2,17 @@
 
 .sidenav-container {
   height: 100%;
-  position: fixed;
 
   .sidenav {
     width: 200px;
+    position: fixed;
     border-right: 1px solid black;
     box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
       0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 
     &__title {
       color: #fff;
+
       margin-bottom: -8px;
       background-color: #0d47a1;
       border-bottom: 1px solid black;

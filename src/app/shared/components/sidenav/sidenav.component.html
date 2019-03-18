@@ -5,7 +5,7 @@
     fixedInViewport="false"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async)!.matches"
+    [opened]="(isHandset$ | async)?.matches"
   >
     <mat-toolbar class="sidenav__title" mat-elevation-z6>Menu</mat-toolbar>
     <mat-nav-list class="sidenav__menu" mat-elevation-z6>
