@@ -1,9 +1,9 @@
 @import '../../../assets/styles/abstracts/mixins';
+@import '../../../assets/styles/components/skeleton';
 
 .repository {
   width: 27rem;
   margin: 1rem;
-  flex-grow: 1;
 
   @include respond(tab-port) {
     // width < 900px?
@@ -13,12 +13,17 @@
   @include respond(tab-land) {
     // width < 1200?
     margin: 0.5rem;
+    flex-grow: 1;
   }
 
   &__header {
     .title {
       color: red;
       font-size: 1.9rem;
+    }
+
+    &:empty {
+      @include skeleton;
     }
   }
 
@@ -30,12 +35,20 @@
       // width < 1200?
       min-height: 24rem;
     }
+
+    &:empty {
+      @include skeleton;
+    }
   }
 
   &__description {
     min-height: 8rem;
     max-height: 8rem;
     word-wrap: break-word;
+
+    &:empty {
+      @include skeleton;
+    }
 
     @include respond(phone) {
       // width < 600?

@@ -1,13 +1,26 @@
 @import '../../assets/styles/abstracts/mixins';
+@import '../../assets/styles/components/skeleton';
 
 .profile {
   margin-top: 64px;
+
+  &:empty {
+    @include skeleton;
+  }
 
   &__info-bar {
     padding: 0;
 
     .title {
       margin-left: 3.4rem;
+
+      &:empty {
+        @include skeleton;
+      }
+    }
+
+    &:empty {
+      @include skeleton;
     }
   }
 
@@ -36,9 +49,17 @@
 
     .container-left {
       width: 18rem;
+
+      &:empty {
+        @include skeleton;
+      }
     }
     .container-right {
       flex: 1;
+
+      &:empty {
+        @include skeleton;
+      }
     }
   }
 }

@@ -11,7 +11,9 @@
     box-shadow: 0 1px 18px rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 
-    @include skeleton;
+    &:empty {
+      @include skeleton;
+    }
   }
 
   .user-info {
