@@ -13,6 +13,10 @@
   @include respond(tab-land) {
     // width < 1200?
     margin: 0.5rem;
+  }
+
+  @media only screen and (min-width: 1333px) {
+    // width < 1200?
     flex-grow: 1;
   }
 

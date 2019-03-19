@@ -56,6 +56,14 @@
     }
     .container-right {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .loader {
+        justify-content: center;
+        align-items: center;
+      }
 
       &:empty {
         @include skeleton;

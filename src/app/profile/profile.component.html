@@ -7,8 +7,15 @@
 
   <div class="profile__container">
     <div class="container-left">
-      <app-profile-details [user]="user"></app-profile-details>
+      <app-profile-details #userDetails [user]="user"></app-profile-details>
     </div>
-    <div class="container-right"><router-outlet></router-outlet></div>
+    <div class="container-right">
+      <app-loader
+        class="loader"
+        [size]="30"
+        *ngIf="!userDetails.user"
+      ></app-loader>
+      <router-outlet *ngIf="userDetails.user"></router-outlet>
+    </div>
   </div>
 </section>
