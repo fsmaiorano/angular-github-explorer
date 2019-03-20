@@ -1,4 +1,5 @@
-# AngularGithubExplorer
+# Angular Github Explorer
+:computer: In this application you can consult a user profile, view repositories and starred repositories of selected selected user.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
