@@ -34,17 +34,13 @@ export class RepositoriesComponent implements OnInit {
     this.currentPage = 1;
     this.limitItems = 12;
     window.onscroll = () => {
-      // console.log(window.innerHeight + document.documentElement.scrollTop);
-      // console.log(document.documentElement.offsetHeight);
       if (
         window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight
       ) {
-        console.log('fim');
         this.currentPage++;
         return this.doRepositoriesPagination();
       }
-      return console.log('nfim');
     };
     this.repositories = [];
     this.activatedRoute.data.subscribe(data => {
