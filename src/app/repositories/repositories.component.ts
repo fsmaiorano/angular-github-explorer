@@ -32,7 +32,7 @@ export class RepositoriesComponent implements OnInit {
 
   init() {
     this.currentPage = 1;
-    this.limitItems = 12;
+    this.limitItems = 16;
     window.onscroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop ===
